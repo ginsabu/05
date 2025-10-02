@@ -8,17 +8,19 @@ int main(int argc, char *argv[]) {
 	const int answer = 37;
     int guess, tries = 0;
 
-    while (printf("Guess a number: "), scanf("%d", &guess) == 1) {
+    do {
+        printf("Guess a number: ");
+        if (scanf("%d", &guess) != 1) return 0;
+
         tries++;
         if (guess < answer) {
             printf("Low!\n");
         } else if (guess > answer) {
             printf("High!\n");
-        } else {
-            printf("Congratulations! tries: %d\n", tries);
-            break;
         }
-    }
+    } while (guess != answer);
+
+    printf("Congratulations! tries: %d\n", tries);
 	
 	return 0;
 }
