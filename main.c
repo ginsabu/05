@@ -5,16 +5,35 @@
 
 int main(int argc, char *argv[]) {
 	
-	int c;
-	int num = 0;
+	int num1, num2;
+    char operator;
+
+    printf("Enter an expression: ");
+    scanf("%d %c %d", &num1, &operator, &num2);
+
+    switch (operator) {
+        case '+':
+            printf("= %d", num1 + num2);
+            break;
+        case '-':
+            printf("= %d", num1 - num2);
+            break;
+        case '*':
+            printf("= %d", num1 * num2);
+            break;
+        case '/':
+            if (num2 != 0) {
+                printf("= %f", (float)num1 / num2);
+            } else {
+                printf("Error: Division by zero\n");
+            }
+            break;
+        default:
+            printf("Error: Invalid operator\n");
+            break;
+    }
+
 	
-	printf("Input a string: ");
-	
-    while ( (c = getchar()) != '\n' && c != EOF ) {
-        if (c >= '0' && c <= '9')
-            num++;        }
-	
-	printf("The number of digits is: %d", num);
 	
 	return 0;
 }
