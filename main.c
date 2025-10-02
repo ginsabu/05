@@ -5,16 +5,18 @@
 
 int main(int argc, char *argv[]) {
 	
-	int a;
+	int a, i;
+	int sum;
 	
-	printf("Input an integer: ");
+	sum = 0;
+	
+	printf("Input a number: ");
 	scanf("%i", &a);
-	printf("Absoulute Value: ");
 	
-	if (a > 0 | a == 0)
-		printf("%i", a);
-	else
-		printf("%i", -a);	
-
+	for (i = 1; i <= a;i++)
+		sum = sum + i;
+	
+	printf("The result is: %i", sum);
+	
 	return 0;
 }
