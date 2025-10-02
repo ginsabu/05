@@ -9,13 +9,12 @@ int main(int argc, char *argv[]) {
 	
 	printf("Input an integer: ");
 	scanf("%i", &a);
+	printf("Absoulute Value: ");
 	
-	if (a > 0)
-		printf("It's positive number");
-	else if (a < 0)
-		printf("It's negative number");	
+	if (a > 0 | a == 0)
+		printf("%i", a);
 	else
-		printf("It's 0");
+		printf("%i", -a);	
 
 	return 0;
 }
